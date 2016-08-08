@@ -1,0 +1,55 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--主页面底栏-->
+    <dimen name="main_bottom_height">50dp</dimen>
+    <dimen name="main_bottom_btn_height">46dp</dimen>
+    <dimen name="main_bottom_btn_width">46dp</dimen>
+    <dimen name="main_bottom_btn_interval">30dp</dimen>
+    <dimen name="main_bottom_top_interval">2dp</dimen>
+    <dimen name="main_bottom_bottom_interval">2dp</dimen>
+    
+    <!--联系人页面标题栏-->
+    <dimen name="title_iv_user_icon_height">40dp</dimen>
+    <dimen name="title_iv_user_icon_width">40dp</dimen>
+    <dimen name="title_switch_width">108dp</dimen>
+    <dimen name="title_switch_height">25dp</dimen>
+    <dimen name="title_img_menu_width">40dp</dimen>
+    <dimen name="title_img_menu_height">40dp</dimen>
+    <dimen name="title_height">90dp</dimen>
+    <dimen name="title_height_index">50dp</dimen>
+    <dimen name="title_padding_left_right">10dp</dimen>
+    <dimen name="title_padding_top_bottom">5dp</dimen>
+    <dimen name="title_searchbar_height">25dp</dimen>
+    <dimen name="title_searchbar_width">25dp</dimen>
+
+    <!--消息列表项-->
+    <dimen name="item_contact_message_height">68dp</dimen>
+    <dimen name="item_contact_message_icon_height">50dp</dimen>
+    <dimen name="item_contact_message_icon_width">50dp</dimen>
+    <dimen name="item_contact_font_size">18sp</dimen>
+    <dimen name="item_contact_message_font_size">16sp</dimen>
+    <dimen name="item_contact_time_font_size">12sp</dimen>
+    <dimen name="item_contact_system_message_height">146dp</dimen>
+    <dimen name="item_contact_padding">10dp</dimen>
+    <dimen name="item_contact_system_divider_left">70dp</dimen>
+    <dimen name="item_contact_system_divider_right">10dp</dimen>
+    <dimen name="item_contact_system_divider_height">1dp</dimen>
+
+    <!--消息目录-->
+    <dimen name="frag_contact_divide">10dp</dimen>
+
+    <!--联系人列表-->
+    <dimen name="three_button_height">105dp</dimen>
+    <dimen name="three_button_padding_left_right">40dp</dimen>
+    <dimen name="three_button_padding_top_bottom">20dp</dimen>
+    <dimen name="item_indexes_height">20dp</dimen>
+    
+    <!--联系人列表菜单弹窗-->
+    <dimen name="contact_pop_window_width">100dp</dimen>
+    <dimen name="contact_pop_window_height">100dp</dimen>
+    <dimen name="contact_pop_window_padding">10dp</dimen>
+
+</resources>
