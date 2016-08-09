@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OA.iml" filepath="$PROJECT_DIR$/OA.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/nrl/nrl.iml" filepath="$PROJECT_DIR$/nrl/nrl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rixinOfficeAutoApp.iml" filepath="$PROJECT_DIR$/rixinOfficeAutoApp.iml" />
     </modules>
   </component>
 </project>
