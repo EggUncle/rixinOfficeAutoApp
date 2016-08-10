@@ -1,21 +1,19 @@
 package rixin.app.officeauto.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import rixin.app.officeauto.R;
 import rixin.app.officeauto.fragment.ContactFragment;
 import rixin.app.officeauto.fragment.HomeFragment;
+import rixin.app.officeauto.fragment.ToolsFragment;
 import rixin.app.officeauto.myclass.ResideMenu;
 import rixin.app.officeauto.myclass.ResideMenuItem;
 
@@ -32,11 +30,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private FragmentManager fm;
     private FragmentTransaction transaction;
     private ContactFragment contactFragment;
+    private ToolsFragment toolsFragment;
+
+    private Fragment nowFragment;// 当前的farmgent，在toolFragment收起后显示该fragment
 
     private ResideMenu mresideMenu;
     private MainActivity context;
     private ResideMenuItem leftbar_manager,leftbar_setting,leftbar_news,leftbar_clear,leftbar_help,leftbar_about;
     private int leftbar_icon=R.mipmap.leftbar_sign;
+
+    private Boolean keyTools = false; //用来判断toolFragment是否展开
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +76,32 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         });
 
         imgTools = (ImageButton) findViewById(R.id.img_tools);
+        imgTools.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!keyTools) {    //当toolsFragment未展开时，展开它
+                    transaction = fm.beginTransaction();
+                    transaction.replace(R.id.main_fragment, toolsFragment);
+                    transaction.commit();
+                    keyTools=true;
+                }else{
+                    transaction = fm.beginTransaction();
+                    transaction.replace(R.id.main_fragment, nowFragment);
+                    transaction.commit();
+                    keyTools=false;
+                }
+            }
+        });
         imgContact = (ImageButton) findViewById(R.id.img_contact);
         imgContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 imgContact.setImageDrawable(getResources().getDrawable(R.drawable.tabbar_contact_highlighted));
                 imgHome.setImageDrawable(getResources().getDrawable(R.drawable.tabbar_home));
+
+
+                nowFragment = contactFragment;
+
                 transaction = fm.beginTransaction();
                 transaction.replace(R.id.main_fragment, contactFragment);
                 transaction.commit();
@@ -97,7 +120,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private void initFragments() {
         contactFragment = new ContactFragment(this);
-
+        toolsFragment = new ToolsFragment();
          fm = getSupportFragmentManager();
 
 
