@@ -33,7 +33,7 @@ public class ContactMessageFragment extends Fragment{
     private View headView;
     private Context context;
     private XCRecyclerView rcvFragContactMessage;
-    private NsRefreshLayout refreshLayout;
+    private NsRefreshLayout nrlMessage;
     private ProgressBar pbContactMessage;
     private ItemTouchHelper itemTouchHelper;
 
@@ -80,8 +80,8 @@ public class ContactMessageFragment extends Fragment{
             }
         });
 
-        refreshLayout = (NsRefreshLayout) view.findViewById(R.id.contact_message_nrl);
-        refreshLayout.setRefreshLayoutController(new NsRefreshLayout.NsRefreshLayoutController() {
+        nrlMessage = (NsRefreshLayout) view.findViewById(R.id.contact_message_nrl);
+        nrlMessage.setRefreshLayoutController(new NsRefreshLayout.NsRefreshLayoutController() {
             @Override
             public boolean isPullRefreshEnable() {
                 return true;
@@ -92,13 +92,13 @@ public class ContactMessageFragment extends Fragment{
                 return false;
             }
         });
-        refreshLayout.setRefreshLayoutListener(new NsRefreshLayout.NsRefreshLayoutListener() {
+        nrlMessage.setRefreshLayoutListener(new NsRefreshLayout.NsRefreshLayoutListener() {
             @Override
             public void onRefresh() {
-                refreshLayout.postDelayed(new Runnable() {
+                nrlMessage.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refreshLayout.finishPullRefresh();
+                        nrlMessage.finishPullRefresh();
 
                         //  Toast.makeText(getActivity(), "下拉刷新", Toast.LENGTH_LONG).show();
                     }
@@ -107,10 +107,10 @@ public class ContactMessageFragment extends Fragment{
 
             @Override
             public void onLoadMore() {
-                refreshLayout.postDelayed(new Runnable() {
+                nrlMessage.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refreshLayout.finishPullLoad();
+                        nrlMessage.finishPullLoad();
 
                         //     Toast.makeText(getActivity(), "上拉加载更多", Toast.LENGTH_LONG).show();
                     }
@@ -172,7 +172,7 @@ public class ContactMessageFragment extends Fragment{
             super.onPostExecute(v);
             rcvFragContactMessage.setAdapter(messageAdapter);
             pbContactMessage.setVisibility(View.GONE);
-            refreshLayout.setVisibility(View.VISIBLE);
+            nrlMessage.setVisibility(View.VISIBLE);
         }
 
         @Override
