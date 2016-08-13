@@ -59,7 +59,7 @@ public class ContactMessageFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.frag_contact_message, null);
-        headView = inflater.inflate(R.layout.farg_contact_message_title,null);
+        headView = inflater.inflate(R.layout.frag_contact_message_title,null);
         initViews();
         initVars();
         MyAyncTask myAyncTask = new MyAyncTask();

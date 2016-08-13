@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_title_height"
+        android:padding="@dimen/home_title_padding">
+
+        <ImageButton
+            android:layout_width="@dimen/home_title_left_bar_height"
+            android:layout_height="@dimen/home_title_left_bar_height"
+            android:id="@+id/img_home_left_bar"
+            android:layout_alignParentLeft="true"
+            android:background="#00ffffff"
+            android:src="@drawable/home_navbar_leftbar" />
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="@dimen/home_title_spinner_height"-->
+            <!--android:layout_centerInParent="true"-->
+            <!---->
+            <!--android:entries="@array/spinner_array"-->
+             <!--/>-->
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_title_spinner_height"
+            android:text="首页"
+            />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#00ffffff"
+            android:src="@drawable/home_navbar_searchbar" />
+
+    </RelativeLayout>
+
+
+    <com.bigkoo.convenientbanner.ConvenientBanner xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_convenientBanner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:canLoop="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/home_announce"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/home_title_padding"
+            android:text="公告栏"
+            android:textSize="@dimen/home_title_tv_font_size"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

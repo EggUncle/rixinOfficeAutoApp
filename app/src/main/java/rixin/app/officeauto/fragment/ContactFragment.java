@@ -84,7 +84,6 @@ public class ContactFragment extends Fragment {
         titleIvIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
             }
         });
