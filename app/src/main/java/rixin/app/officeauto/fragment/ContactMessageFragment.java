@@ -24,6 +24,7 @@ import rixin.app.officeauto.myclass.Msg;
 import rixin.app.officeauto.myclass.RecycleViewDivider;
 import rixin.app.officeauto.myclass.XCRecyclerView;
 
+
 /**
  * Created by egguncle on 16.8.3.
  * 消息界面
@@ -80,6 +81,7 @@ public class ContactMessageFragment extends Fragment{
             }
         });
 
+
         nrlMessage = (NsRefreshLayout) view.findViewById(R.id.contact_message_nrl);
         nrlMessage.setRefreshLayoutController(new NsRefreshLayout.NsRefreshLayoutController() {
             @Override
@@ -118,34 +120,34 @@ public class ContactMessageFragment extends Fragment{
             }
         });
 
-        itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
-            @Override
-            public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-                final int dragFlags;
-                final int swipeFlags;
-                if (recyclerView.getLayoutManager() instanceof GridLayoutManager) {
-                    dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
-                    swipeFlags = 0;
-                } else {
-                    dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
-                    swipeFlags = ItemTouchHelper.START | ItemTouchHelper.END;
-                }
-                return makeMovementFlags(dragFlags, swipeFlags);
-            }
-
-            @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                int position = viewHolder.getAdapterPosition();
-                messageAdapter.notifyItemRemoved(position);
-                messageData.remove(position);
-            }
-        });
-        itemTouchHelper.attachToRecyclerView(rcvFragContactMessage);
+//        itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
+//            @Override
+//            public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+//                final int dragFlags;
+//                final int swipeFlags;
+//                if (recyclerView.getLayoutManager() instanceof GridLayoutManager) {
+//                    dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+//                    swipeFlags = 0;
+//                } else {
+//                    dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+//                    swipeFlags = ItemTouchHelper.START | ItemTouchHelper.END;
+//                }
+//                return makeMovementFlags(dragFlags, swipeFlags);
+//            }
+//
+//            @Override
+//            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+//                int position = viewHolder.getAdapterPosition();
+//                messageAdapter.notifyItemRemoved(position);
+//                messageData.remove(position);
+//            }
+//        });
+      //  itemTouchHelper.attachToRecyclerView(rcvFragContactMessage);
     }
 
 

@@ -1,6 +1,7 @@
 package rixin.app.officeauto.adapter;
 
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -9,25 +10,39 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
+import java.util.zip.Inflater;
 
 import rixin.app.officeauto.R;
 import rixin.app.officeauto.myclass.News;
+import rixin.app.officeauto.myclass.XCRecyclerView;
 
 /**
  * Created by egguncle on 16.8.13.
  */
-public class HomeRecycleAdapter extends RecyclerView.Adapter<HomeRecycleAdapter.ViewHolder> {
+public class HomeRecycleAdapter extends XCRecyclerView.Adapter<HomeRecycleAdapter.ViewHolder> {
 
     private List<News> listNews;
     private Context context;
-    private PopupWindow popupWindow;
+    private LinearLayout popWindow;
 
+    private TextView tvPopwindowHomeTitle;
+    private TextView tvPopwindowHomeDate;
+    private TextView tvHomePopwindowAuthor;
+    private TextView tvHomePopwindowContent;
+    private TextView tvHomePopwindowForm;
 
     public HomeRecycleAdapter(Context context, List<News> listNews) {
         this.listNews = listNews;
         this.context = context;
+        popWindow = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.home_popwindow,null);//弹窗
+        tvPopwindowHomeTitle = (TextView) popWindow.findViewById(R.id.tv_popwindow_home_title);
+        tvPopwindowHomeDate = (TextView) popWindow.findViewById(R.id.tv_popwindow_home_date);
+        tvHomePopwindowAuthor = (TextView) popWindow.findViewById(R.id.tv_home_popwindow_author);
+        tvHomePopwindowContent = (TextView) popWindow.findViewById(R.id.tv_home_popwindow_content);
+        tvHomePopwindowForm = (TextView) popWindow.findViewById(R.id.tv_home_popwindow_form);
 
     }
 
@@ -38,19 +53,37 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<HomeRecycleAdapter.
     }
 
     @Override
-    public void onBindViewHolder(HomeRecycleAdapter.ViewHolder holder, int position) {
-        holder.tvItemHomeTitle.setText(listNews.get(position).getStrNewTitle());
-        holder.tvItemHomeDate.setText(listNews.get(position).getStrNewDate());
-        holder.tvHomeItemAuthor.setText(listNews.get(position).getStrNewAuthor());
-        holder.tvHomeItemContent.setText(listNews.get(position).getStrNewContent());
-        holder.tvHomeItemForm.setText(listNews.get(position).getStrNewForm());
+    public void onBindViewHolder(HomeRecycleAdapter.ViewHolder holder, final int position) {
+        final String title=listNews.get(position).getStrNewTitle();
+        final String date =listNews.get(position).getStrNewDate();
+        final String author=listNews.get(position).getStrNewAuthor();
+        final String content=listNews.get(position).getStrNewContent();
+        final String form=listNews.get(position).getStrNewForm();
 
-//        holder.homeLine.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+
+        holder.tvItemHomeTitle.setText(title);
+        holder.tvItemHomeDate.setText(date);
+        holder.tvHomeItemAuthor.setText(author);
+        holder.tvHomeItemContent.setText(content);
+        holder.tvHomeItemForm.setText(form);
+
+        holder.homeLine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+//                        .setTitle(listNews.get(position).getStrNewTitle())
+//                        .setMessage(listNews.get(position).getStrNewContent())
+//                        .setPositiveButton("我知道了",null);
+//                builder.create();
+//                builder.show();
+                tvPopwindowHomeTitle.setText(title);
+                tvPopwindowHomeDate.setText(date);
+                tvHomePopwindowAuthor.setText(author);
+                tvHomePopwindowContent.setText(content);
+                tvHomePopwindowForm .setText(form);
+                new AlertDialog.Builder(context).setView(popWindow).create().show();
+            }
+        });
     }
 
     @Override

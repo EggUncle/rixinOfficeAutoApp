@@ -42,10 +42,10 @@
         android:paddingTop="@dimen/home_item_tv_padding_top_bottom"
         android:textSize="@dimen/home_item_author_font_size" />
 
-    <!--android:ellipsize="end"-->
-    <!--android:maxLines="3"-->
 
     <TextView
+        android:ellipsize="end"
+        android:maxLines="3"
         android:id="@+id/tv_home_item_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
