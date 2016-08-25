@@ -13,13 +13,13 @@
             android:layout_marginTop="35dp"
             android:layout_marginLeft="21dp"
             android:background="#00000000"
-            android:id="@+id/img_out"
+            android:id="@+id/img_close"
             android:src="@mipmap/leftbar_close"
             android:layout_width="22dp"
             android:layout_height="22dp" />
 
         <ImageView
-            android:id="@+id/tv_out"
+            android:id="@+id/tv_menu"
             android:src="@mipmap/leftbar_font_menu"
 
             android:layout_width="57dp"

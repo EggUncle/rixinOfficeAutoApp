@@ -17,7 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.EditInformationActivity"></activity>
+        <activity android:name=".activity.EditInformationActivity" />
+        <activity android:name=".activity.BackstageActivity" />
+        <activity android:name=".activity.UserSettingActivity" />
+        <activity android:name=".activity.NoticeActivity" />
+        <activity android:name=".activity.ClearActivity" />
+        <activity android:name=".activity.HelpActivity" />
+        <activity android:name=".activity.AboutActivity"></activity>
     </application>
 
 </manifest>
