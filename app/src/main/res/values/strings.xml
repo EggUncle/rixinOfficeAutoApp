@@ -34,5 +34,6 @@
     <string name="help">使用帮助</string>
     <string name="suggtion">意见反馈</string>
     <string name="about">关于</string>
+    <string name="put_up">提交</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>

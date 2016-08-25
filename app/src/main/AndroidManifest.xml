@@ -23,7 +23,8 @@
         <activity android:name=".activity.NoticeActivity" />
         <activity android:name=".activity.ClearActivity" />
         <activity android:name=".activity.HelpActivity" />
-        <activity android:name=".activity.AboutActivity"></activity>
+        <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.SuggestionActivity"></activity>
     </application>
 
 </manifest>

@@ -99,4 +99,8 @@
     <!--消息通知设置页面-->
     <dimen name="ac_notice_quiet_about_size">12sp</dimen>
 
+    <!--反馈页面-->
+    <dimen name="ac_suggestion_height">170dp</dimen>
+    <dimen name="ac_suggestion_add_size">40dp</dimen>
+
 </resources>
